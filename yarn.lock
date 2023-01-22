@@ -24,6 +24,11 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
+"@fontsource/montserrat-alternates@^4.5.11":
+  version "4.5.11"
+  resolved "https://registry.yarnpkg.com/@fontsource/montserrat-alternates/-/montserrat-alternates-4.5.11.tgz#9a6f6ea56f5d30152e567389b8c142fbda55ca22"
+  integrity sha512-A9bsrj56gM3pQE8OZOj7/tu+O7j1ut1wOiPkFPQnKVU1ouDAhSh7fH+phDiINyaNiTvduZ9BfKwl66KdKgHMrg==
+
 "@humanwhocodes/config-array@^0.11.8":
   version "0.11.8"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.11.8.tgz#03595ac2075a4dc0f191cc2131de14fbd7d410b9"
