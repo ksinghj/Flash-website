@@ -5,6 +5,7 @@ import { Montserrat_Alternates } from '@next/font/google'
 import '@fontsource/montserrat-alternates' // fonts were requiring reload so added this
 
 import Container from '@/components/Container'
+import Layout from '@/components/layout'
 
 const montserratAlternates = Montserrat_Alternates({
   weight: ['200', '400', '600'], // tailwind classes are: 'font-extralight' || 'font-normal' || 'font-semibold'
@@ -23,9 +24,11 @@ export default function MyApp({ Component, pageProps }: any) {
       </Head>
       <main
         className={`${montserratAlternates.className} ${montserratAlternates.variable} h-full w-full bg-white dark:bg-dark-blue`}>
-        <Container>
-          <Component {...pageProps} />
-        </Container>
+        <Layout>
+          <Container>
+            <Component {...pageProps} />
+          </Container>
+        </Layout>
       </main>
     </>
   )
