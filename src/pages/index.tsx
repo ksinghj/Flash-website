@@ -3,9 +3,10 @@ import Image from 'next/image'
 
 import flashLogoText from '../assets/logo-text.png'
 import excelDeck from '../assets/format-tips-excel.png'
-import studyScreen from '../assets/study-screen.png'
 import createDeckManual from '../assets/create-deck-manual.png'
+
 import C2AButton from '@/components/C2AButton'
+import InteractiveDeck from '@/components/InteractiveDeck'
 
 export default function Home() {
   return (
@@ -18,28 +19,50 @@ export default function Home() {
       <div>
         <div className='flex flex-col justify-center items-center'>
           <Image className='mb-6' src={flashLogoText} alt='Flash logo' height={100} />
-          <h2 className='text-white text-2xl text-center font-semibold mb-12'>Flashcards made easy.</h2>
+          <h2 className='text-white text-2xl text-center font-semibold mb-8'>Flashcards made easy.</h2>
           <div className='flex flex-col md:flex-row my-6 md:my-10'>
             <div className='flex flex-col justify-center items-center flex-1'>
-              <p className='text-white text-lg text-center flex-1 mb-6'>
-                Create decks of flashcards easily by importing them from excel or google sheets.
-              </p>
+              <h3 className='text-white text-lg text-center flex-1 mb-8 font-semibold'>
+                Create decks of flashcards in minutes.
+              </h3>
               <Image
-                className='mb-12'
+                className='mb-16'
                 src={excelDeck}
-                alt='formatting tips when creating deck of flashcards'
+                alt='Create a deck of flashcards from a file. Can be excel or google sheets.'
                 height={300}
               />
-            </div>
-            <div className='flex flex-col justify-center items-center flex-1'>
-              <p className='text-white text-lg text-center flex-1 mb-6'>Of couse you could always do it manually...</p>
-              <Image className='mb-12' src={createDeckManual} alt='create deck manually demo' height={320} />
+              <p className='text-white text-lg text-center font-semibold mb-8'>
+                The above file uploaded to{' '}
+                <a href='https://flashapp.cards' className='underline text-flash-yellow'>
+                  Flash
+                </a>{' '}
+                would create 2 decks, &apos;Spanish verbs&apos; and &apos;Nouns&apos;. Try &apos;Spanish verbs&apos;
+                yourself:
+              </p>
             </div>
           </div>
-          <p className='text-white text-lg text-center mb-6'>Then put the work in and ace that test!</p>
-          <Image className='mb-12' src={studyScreen} alt='Demonstrates Flash user studying flashcards' height={600} />
-          <p className='text-white text-lg text-center mb-6'>Try for free today</p>
-          <C2AButton className='px-14 py-3 text-2xl' />
+          <div className='bg-white rounded-xl p-10 lg:p-2'>
+            <InteractiveDeck />
+          </div>
+          <div className='flex flex-col justify-center items-center flex-1'>
+            <h4 className='text-white text-lg text-center flex-1 mt-16 mb-10 font-semibold'>
+              Of couse you can also create the flashcards manually...
+            </h4>
+            <div className='mb-12 max-w-xs'>
+              <Image className='w-100' src={createDeckManual} alt='create deck manually demo' />
+            </div>
+          </div>
+          <p className='text-white text-lg text-center mb-6 font-semibold'>
+            Create an account and study flashcards without any distractions at{' '}
+            <a className='underline text-flash-yellow' href='https://flashapp.cards'>
+              flashapp.cards
+            </a>
+            .
+          </p>
+          <p className='text-white text-lg text-center mb-6 lg:mb-12 font-semibold'>
+            All online, no download required. No ads, simple user interface and mobile friendly.
+          </p>
+          <C2AButton className='px-14 py-3 my-10 text-2xl'>Try for free</C2AButton>
         </div>
       </div>
     </>
