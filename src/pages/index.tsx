@@ -26,12 +26,12 @@ export default function Home() {
                 Create decks of flashcards in minutes.
               </h3>
               <Image
-                className='mb-12'
+                className='mb-16'
                 src={excelDeck}
                 alt='Create a deck of flashcards from a file. Can be excel or google sheets.'
                 height={300}
               />
-              <p className='text-white text-lg text-center font-semibold'>
+              <p className='text-white text-lg text-center font-semibold mb-8'>
                 The above file uploaded to{' '}
                 <a href='https://flashapp.cards' className='underline text-flash-yellow'>
                   Flash
@@ -41,12 +41,16 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <InteractiveDeck />
+          <div className='bg-white rounded-xl p-10 lg:p-2'>
+            <InteractiveDeck />
+          </div>
           <div className='flex flex-col justify-center items-center flex-1'>
-            <h4 className='text-white text-lg text-center flex-1 mb-8 font-semibold'>
+            <h4 className='text-white text-lg text-center flex-1 mt-16 mb-10 font-semibold'>
               Of couse you can also create the flashcards manually...
             </h4>
-            <Image className='mb-12' src={createDeckManual} alt='create deck manually demo' height={320} />
+            <div className='mb-12 max-w-xs'>
+              <Image className='w-100' src={createDeckManual} alt='create deck manually demo' />
+            </div>
           </div>
           <p className='text-white text-lg text-center mb-6 font-semibold'>
             Create an account and study flashcards without any distractions at{' '}
@@ -58,7 +62,7 @@ export default function Home() {
           <p className='text-white text-lg text-center mb-6 lg:mb-12 font-semibold'>
             All online, no download required. No ads, simple user interface and mobile friendly.
           </p>
-          <C2AButton className='px-14 py-3 lg:my-10 text-2xl'>Try for free</C2AButton>
+          <C2AButton className='px-14 py-3 my-10 text-2xl'>Try for free</C2AButton>
         </div>
       </div>
     </>
