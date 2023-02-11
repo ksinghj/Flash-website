@@ -34,14 +34,14 @@ const useStudyStore = create<StudyState>()((set, get) => ({
     const knowState = get().know || []
     set({ know: [...knowState, card] })
     set({ knowHistory: [...get().knowHistory, 'know'] })
-    const cardsFirstRemoved = get()?.cards.slice(1)
+    const cardsFirstRemoved = get()?.cards?.slice(1)
     set({ cards: cardsFirstRemoved })
   },
   addToDontKnow: (card: Card) => {
     const dontKnowState = get().dontKnow || []
     set({ dontKnow: [...dontKnowState, card] })
     set({ knowHistory: [...get().knowHistory, 'dontKnow'] })
-    const cardsFirstRemoved = get()?.cards.slice(1)
+    const cardsFirstRemoved = get()?.cards?.slice(1)
     set({ cards: cardsFirstRemoved })
   },
   undo: () => {
@@ -50,16 +50,16 @@ const useStudyStore = create<StudyState>()((set, get) => ({
       const lastSeenCard = get()?.cardHistory.splice(-1)
       const cardsState = get()?.cards
       set({ cardHistory })
-      set({ cards: [...lastSeenCard, ...cardsState] })
+      set({ cards: [...lastSeenCard, ...(cardsState || [])] })
       // remove from know/dontKnow
       const lastAdded = get().knowHistory[get().knowHistory.length - 1]
       if (lastAdded === 'know' || lastAdded === 'dontKnow') {
         if (lastAdded === 'know') {
-          const knowLastRemoved = get().know.slice(0, -1)
+          const knowLastRemoved = get().know?.slice(0, -1)
           set({ know: knowLastRemoved })
         }
         if (lastAdded === 'dontKnow') {
-          const dontKnowLastRemoved = get().dontKnow.slice(0, -1)
+          const dontKnowLastRemoved = get()?.dontKnow?.slice(0, -1)
           set({ dontKnow: dontKnowLastRemoved })
         }
         const knowHistoryLastRemoved = get().knowHistory.slice(0, -1)
@@ -85,7 +85,7 @@ const useStudyStore = create<StudyState>()((set, get) => ({
     if (!get()?.cards || !get()?.allCards) return
     set({ cardHistory: [] })
     const shuffled = get()
-      ?.cards.map(value => ({ value, sort: Math.random() }))
+      ?.cards?.map(value => ({ value, sort: Math.random() }))
       .sort((a, b) => a.sort - b.sort)
       .map(({ value }) => value)
 
@@ -98,7 +98,7 @@ const useStudyStore = create<StudyState>()((set, get) => ({
     // create temp cards, if there is a match,
     // remove from temp arr and push to unshuffled
     // this way we avoid duplicating cards (allCards may contain duplicate cards)
-    get().allCards.forEach(card => {
+    get().allCards?.forEach(card => {
       const tempCards = get().cards
       tempCards?.forEach((c, index) => {
         if (_.isEqual(card, c)) {
