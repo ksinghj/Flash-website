@@ -6,10 +6,11 @@ export default function Document() {
     <Html className='dark'>
       <Head>
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
-        <meta name='description'>
-          Flash - Make flash cards for free. No download required, simple and easy to use, flashing cards on screen.
-        </meta>
-        <meta charSet='UTF-8'></meta>
+        <meta
+          name='description'
+          content='Flash - Make flash cards for free. No download required, simple and easy to use, flashing cards on screen.'
+        />
+        <meta charSet='UTF-8' />
         <meta name='theme-color' content='#6a94ff'></meta>
         {/* Favicons */}
         <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
