@@ -5,6 +5,12 @@ export default function Document() {
   return (
     <Html className='dark'>
       <Head>
+        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+        <meta name='description'>
+          Flash - Make flash cards for free. No download required, simple and easy to use, flashing cards on screen.
+        </meta>
+        <meta charSet='UTF-8'></meta>
+        <meta name='theme-color' content='#6a94ff'></meta>
         {/* Favicons */}
         <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
         <link rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png' />
@@ -18,7 +24,6 @@ export default function Document() {
           rel='stylesheet'
         />
         <meta name='msapplication-TileColor' content='#6a94ff' />
-        <meta name='theme-color' content='#6a94ff'></meta>
       </Head>
       <body>
         <Main />

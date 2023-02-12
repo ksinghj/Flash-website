@@ -19,7 +19,6 @@ export default function MyApp({ Component, pageProps }: any) {
   return (
     <>
       <Head>
-        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
         <title>Flash - Flashcards made easy</title>
       </Head>
       <main
